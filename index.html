@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scientific Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="calculator">
+                <div class="header">
+                    <h1>Scientific Calculator</h1>
+                    <button class="mode-toggle" onclick="toggleDegreeMode()"><span id="modeText">DEG</span></button>
+                </div>
+                <input type="text" id="display" readonly>
+                <div class="keys">
+                    <!-- Row 1: Memory and Clear -->
+                    <button class="function" onclick="clearDisplay()">C</button>
+                    <button class="function" onclick="deleteLast()">DEL</button>
+                    <button class="function" onclick="toggleSign()">+/-</button>
+                    <button class="operator" onclick="appendToDisplay('/')">÷</button>
+
+                    <!-- Row 2: Advanced Functions -->
+                    <button class="function" onclick="calculateSin()">sin</button>
+                    <button class="function" onclick="calculateCos()">cos</button>
+                    <button class="function" onclick="calculateTan()">tan</button>
+                    <button class="operator" onclick="appendToDisplay('*')">×</button>
+
+                    <!-- Row 3: More Functions -->
+                    <button class="function" onclick="calculateSqrt()">√</button>
+                    <button class="function" onclick="calculateSquare()">x²</button>
+                    <button class="function" onclick="appendToDisplay('(')">(</button>
+                    <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+                    <!-- Row 4: Power and Percentage -->
+                    <button class="function" onclick="appendToDisplay('Math.PI')">π</button>
+                    <button class="function" onclick="calculatePower()">x^y</button>
+                    <button class="function" onclick="calculatePercent()">%</button>
+                    <button class="operator" onclick="appendToDisplay('+')" style="grid-row: span 2;">+</button>
+
+                    <!-- Row 5-6: Number Pad -->
+                    <button class="number" onclick="appendToDisplay('7')">7</button>
+                    <button class="number" onclick="appendToDisplay('8')">8</button>
+                    <button class="number" onclick="appendToDisplay('9')">9</button>
+
+                    <button class="number" onclick="appendToDisplay('4')">4</button>
+                    <button class="number" onclick="appendToDisplay('5')">5</button>
+                    <button class="number" onclick="appendToDisplay('6')">6</button>
+
+                    <button class="number" onclick="appendToDisplay('1')">1</button>
+                    <button class="number" onclick="appendToDisplay('2')">2</button>
+                    <button class="number" onclick="appendToDisplay('3')">3</button>
+                    <button class="operator" onclick="appendToDisplay('.')" style="grid-column: span 2;">.</button>
+
+                    <!-- Row 7: Zero and Equals -->
+                    <button class="number" onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
+                    <button class="equals" onclick="calculate()" style="grid-column: span 2;">=</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
